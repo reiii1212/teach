@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>例題2 ステップ3：解説 - 数学A 確率</title>
+  <link rel="stylesheet" href="../style.css">
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']]
+      }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+<header>
+  <h1>例題2：ステップ3（解説）</h1>
+</header>
+<nav>
+  <a href="prob_ex1_step1.html">例題1</a>
+  <a href="prob_ex2_step1.html" style="background: #1abc9c;">例題2</a>
+  <a href="prob_ex3_step1.html">例題3</a>
+  <a href="prob_problem_1.html">演習</a>
+  <a href="../index.html">トップ</a>
+</nav>
+
+<section class="animate-fade">
+  <div class="summary-box">
+    <h3>解答・解説</h3>
+    <p>「少なくとも1個は1」の余事象は、<strong>「2個とも1以外の目（2〜6）が出る」</strong>ことです。</p>
+    <ul>
+      <li>2個とも1以外の目が出る確率は：
+        <div style="font-size: 1.3rem; margin: 10px 0; text-align: center;">
+          \[ \frac{5}{6} \times \frac{5}{6} = \frac{25}{36} \]
+        </div>
+      </li>
+    </ul>
+    <p>求める確率は、\( 1 \) からこの余事象の確率を引いて：</p>
+    <div style="background: #f8f9fa; padding: 15px; border-radius: 8px; margin: 15px 0; text-align: center;">
+      <div style="font-size: 1.5rem;">
+        \[ 1 - \frac{25}{36} = \frac{11}{36} \]
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-top: 40px; text-align: right;">
+    <a href="prob_problem_2.html" class="page-card" style="display: inline-block; width: auto; background: #e67e22; color: white; border: none;">
+      演習2にチャレンジ！ ➔
+    </a>
+  </div>
+</section>
+
+<script src="../app.js"></script>
+</body>
+</html>

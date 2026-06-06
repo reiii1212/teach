@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>例題3 ステップ2：イメージ - 数学A 確率</title>
+  <link rel="stylesheet" href="../style.css">
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+<header>
+  <h1>例題3：ステップ2（可視化）</h1>
+</header>
+<nav>
+  <a href="prob_ex1_step1.html">例題1</a>
+  <a href="prob_ex2_step1.html">例題2</a>
+  <a href="prob_ex3_step1.html" style="background: #1abc9c;">例題3</a>
+  <a href="prob_problem_1.html">演習</a>
+  <a href="../index.html">トップ</a>
+</nav>
+
+<section class="animate-fade">
+  <h3>玉を取り出してみよう</h3>
+  <div class="dice-stage" style="justify-content: center; gap: 20px;">
+    <div id="ball-container" style="display:flex; gap: 10px; padding: 20px; border: 2px solid #ddd; border-radius: 50px;">
+      <div class="dice" style="border-radius: 50%; background: #e74c3c; border:none; color:white;">赤</div>
+      <div class="dice" style="border-radius: 50%; background: #e74c3c; border:none; color:white;">赤</div>
+      <div class="dice" style="border-radius: 50%; background: #e74c3c; border:none; color:white;">赤</div>
+      <div class="dice" style="border-radius: 50%; background: #fff; border:2px solid #333;">白</div>
+      <div class="dice" style="border-radius: 50%; background: #fff; border:2px solid #333;">白</div>
+    </div>
+  </div>
+  <div style="text-align:center; margin-top: 20px;">
+    <button onclick="drawBalls()">2個取り出す</button>
+  </div>
+  <div id="draw-result" style="text-align:center; margin-top: 20px; font-weight:bold; height: 1.5rem;"></div>
+
+  <div style="margin-top: 40px; display: flex; justify-content: space-between;">
+    <a href="prob_ex3_step1.html" style="text-decoration: none; color: #7f8c8d;">⇠ 戻る</a>
+    <a href="prob_ex3_step3.html" class="page-card" style="display: inline-block; width: auto;">
+      ステップ3：計算式を確認 ➔
+    </a>
+  </div>
+</section>
+
+<script src="../app.js"></script>
+</body>
+</html>

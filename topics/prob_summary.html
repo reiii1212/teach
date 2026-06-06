@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>まとめ：確率の定義 - 数学A 確率</title>
+  <link rel="stylesheet" href="../style.css">
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']]
+      }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+<header>
+  <h1>まとめ：確率の定義</h1>
+</header>
+<nav>
+  <a href="prob_ex1_step1.html">例題</a>
+  <a href="prob_problem_1.html">演習</a>
+  <a href="prob_summary.html" style="background: #1abc9c;">まとめ</a>
+  <a href="../index.html">トップ</a>
+</nav>
+
+<section class="animate-fade">
+  <div class="summary-box">
+    <h3>1. 確率の定義</h3>
+    <p>ある試行において、起こりうるすべての場合の数が \( n \) 通りあり、そのどれが起こることも同様に確からしいとする。そのうち、事象 \( A \) の起こる場合の数が \( a \) 通りであるとき、事象 \( A \) の起こる確率 \( P(A) \) は</p>
+    <div style="background: #f8f9fa; padding: 15px; border-radius: 8px; margin: 15px 0; text-align: center;">
+      <div style="font-size: 1.8rem;">
+        \[ P(A) = \frac{a}{n} \]
+      </div>
+    </div>
+  </div>
+
+  <div class="summary-box" style="margin-top: 20px;">
+    <h3>2. 確率の基本性質</h3>
+    <div style="background: #fdfefe; padding: 15px; border-left: 5px solid #2ecc71;">
+      <p>・確率 \( P(A) \) の値の範囲： <strong>\( 0 \le P(A) \le 1 \)</strong></p>
+      <p>・決して起こらない事象の確率： <strong>\( 0 \)</strong></p>
+      <p>・必ず起こる事象の確率： <strong>\( 1 \)</strong></p>
+    </div>
+  </div>
+
+  <div class="summary-box" style="margin-top: 20px;">
+    <h3>3. 余事象の確率</h3>
+    <p>事象 \( A \) に対して、「\( A \) が起こらない」という事象を \( A \) の余事象といい、\( \overline{A} \) で表す。</p>
+    <div style="background: #fff5f5; padding: 15px; border-radius: 8px; margin: 15px 0; text-align: center;">
+      <div style="font-size: 1.5rem;">
+        \[ P(\overline{A}) = 1 - P(A) \]
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-top: 40px; text-align: left;">
+    <a href="prob_problem_3.html" style="text-decoration: none; color: #7f8c8d;">⇠ 演習に戻る</a>
+  </div>
+</section>
+
+<script src="../app.js"></script>
+</body>
+</html>

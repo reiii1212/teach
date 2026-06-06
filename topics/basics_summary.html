@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>まとめ - 確率の基本</title>
+  <link rel="stylesheet" href="../style.css">
+  <script>
+  window.MathJax = { tex: { inlineMath: [['$', '$']] } };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <style>
+    .key-point {
+      background: #fff8e1;
+      border-left: 5px solid #ffc107;
+      padding: 15px;
+      margin: 20px 0;
+    }
+    .formula-card {
+      text-align: center;
+      font-size: 1.5rem;
+      padding: 20px;
+      background: #f1f8ff;
+      border: 1px solid #c8e1ff;
+      border-radius: 10px;
+      margin: 20px 0;
+    }
+  </style>
+</head>
+<body>
+<header>
+  <h1>まとめ：確率の基本</h1>
+</header>
+
+<section>
+  <h2>1. 確率の定義</h2>
+  <p>ある試行において、起こりうるすべての場合の数を $n$、事象 $A$ の起こる場合の数を $a$ とすると、事象 $A$ の起こる確率 $P(A)$ は：</p>
+  
+  <div class="formula-card">
+    $P(A) = \frac{a}{n} = \frac{\text{事象 } A \text{ の起こる場合の数}}{\text{起こりうるすべての場合の数}}$
+  </div>
+
+  <div class="key-point">
+    <strong>重要：同様に確からしい</strong>
+    <p>この公式が使えるのは、どの場合が起こることも「同じ程度に期待できる」ときだけです。これを<b>同様に確からしい</b>といいます。</p>
+  </div>
+
+  <h2>2. 確率の性質</h2>
+  <ul class="fade-list">
+    <li>確率は必ず $0$ 以上 $1$ 以下の値をとる： $0 \le P(A) \le 1$</li>
+    <li>決して起こらない事象の確率は $0$ です。</li>
+    <li>必ず起こる事象の確率は $1$ です。</li>
+  </ul>
+
+  <h2>3. 解き方のステップ</h2>
+  <div class="flow">
+    <div class="flow-item"><b>STEP 1</b><br>全事象 $n$ を数える</div>
+    <div class="arrow">→</div>
+    <div class="flow-item"><b>STEP 2</b><br>事象 $A$ の $a$ を数える</div>
+    <div class="arrow">→</div>
+    <div class="flow-item"><b>STEP 3</b><br>分数にして約分する</div>
+  </div>
+
+  <p><a href="basics.html" class="btn-check" style="text-decoration:none; background:#95a5a6; display:inline-block;">基本メニューへ戻る</a></p>
+</section>
+</body>
+</html>

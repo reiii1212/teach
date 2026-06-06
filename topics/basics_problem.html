@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>演習問題 - 確率の基本</title>
+  <link rel="stylesheet" href="../style.css">
+  <script>
+  window.MathJax = { tex: { inlineMath: [['$', '$']] } };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <style>
+    .problem-card {
+      background: #fff;
+      border: 1px solid #d9e2ec;
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+    .answer-zone {
+      margin-top: 15px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .fraction-input {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      vertical-align: middle;
+    }
+    .fraction-input input {
+      width: 50px;
+      text-align: center;
+      padding: 5px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    .fraction-line {
+      width: 100%;
+      height: 1px;
+      background: #333;
+      margin: 2px 0;
+    }
+    .btn-check {
+      padding: 8px 16px;
+      background: #3498db;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    .btn-check:hover {
+      background: #2980b9;
+    }
+    .result-msg {
+      font-weight: bold;
+      margin-left: 10px;
+    }
+    .correct { color: #27ae60; }
+    .incorrect { color: #e74c3c; }
+  </style>
+</head>
+<body>
+<header>
+  <h1>演習問題：確率の基本</h1>
+</header>
+
+<section>
+  <div class="problem-card">
+    <h3>問題 1</h3>
+    <p>1個のサイコロを投げるとき、奇数の目が出る確率を求めなさい。</p>
+    <div class="answer-zone">
+      答え：
+      <div class="fraction-input">
+        <input type="number" id="q1-num" placeholder="分子">
+        <div class="fraction-line"></div>
+        <input type="number" id="q1-den" placeholder="分母">
+      </div>
+      <button class="btn-check" onclick="checkAnswer(1, 1, 2)">採点する</button>
+      <span id="res-1" class="result-msg"></span>
+    </div>
+    <div id="hint-1" style="display:none; margin-top:10px; font-size:0.9rem; color:#666;">
+      <span class="pill">ヒント</span> 全体は6通り。奇数は 1, 3, 5 の3通りです。
+    </div>
+  </div>
+
+  <div class="problem-card">
+    <h3>問題 2</h3>
+    <p>袋の中に赤玉3個、白玉2個が入っています。この袋から1個の玉を取り出すとき、それが赤玉である確率を求めなさい。</p>
+    <div class="answer-zone">
+      答え：
+      <div class="fraction-input">
+        <input type="number" id="q2-num" placeholder="分子">
+        <div class="fraction-line"></div>
+        <input type="number" id="q2-den" placeholder="分母">
+      </div>
+      <button class="btn-check" onclick="checkAnswer(2, 3, 5)">採点する</button>
+      <span id="res-2" class="result-msg"></span>
+    </div>
+    <div id="hint-2" style="display:none; margin-top:10px; font-size:0.9rem; color:#666;">
+      <span class="pill">ヒント</span> 全部の玉の数は $3+2=5$ 個です。
+    </div>
+  </div>
+
+  <p><a href="basics.html" class="btn-check" style="text-decoration:none; background:#95a5a6;">基本メニューへ戻る</a></p>
+</section>
+
+<script>
+function checkAnswer(qId, correctNum, correctDen) {
+  const num = parseInt(document.getElementById(`q${qId}-num`).value);
+  const den = parseInt(document.getElementById(`q${qId}-den`).value);
+  const res = document.getElementById(`res-${qId}`);
+  const hint = document.getElementById(`hint-${qId}`);
+
+  if (isNaN(num) || isNaN(den)) {
+    res.textContent = "値を入力してください";
+    res.className = "result-msg incorrect";
+    return;
+  }
+
+  // 約分された形でも正解とするか、厳密な一致とするか。
+  // ここでは分数の値が一致するかどうかで判定する。
+  if (num * correctDen === den * correctNum) {
+    res.textContent = "正解です！";
+    res.className = "result-msg correct";
+    hint.style.display = "none";
+  } else {
+    res.textContent = "残念、不正解です。";
+    res.className = "result-msg incorrect";
+    hint.style.display = "block";
+  }
+}
+</script>
+</body>
+</html>
