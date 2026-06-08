@@ -28,6 +28,8 @@
   <a href="prob_problem_3.html">第3問</a>
   <a href="prob_problem_4.html">第4問</a>
   <a href="prob_problem_5.html" style="background: #1abc9c;">第5問</a>
+  <a href="prob_problem_6.html">第6問</a>
+  <a href="prob_problem_7.html">第7問</a>
   <a href="prob_summary.html">まとめ</a>
   <a href="../index.html">トップ</a>
 </nav>
@@ -51,14 +53,16 @@
   </div>
 
   <div class="hint-container">
-    <button class="hint-tab" onclick="showNextHint()">
-      💡 ヒントを見る
-    </button>
+    <div class="hint-btn-group">
+      <button class="hint-btn" onclick="toggleHint('hint1')">💡 ヒント1</button>
+      <button class="hint-btn" onclick="toggleHint('hint2')">💡 ヒント2</button>
+      <button class="hint-btn" onclick="toggleHint('hint3')">💡 ヒント3</button>
+    </div>
     <div id="hint1" class="hint-content">
       2個のサイコロを投げたときの全事象は何通りですか？ ($6 \times 6$)
     </div>
     <div id="hint2" class="hint-content">
-      和が5になる組み合わせを書き出してみましょう。 (1, 4), (2, 3), ...
+      和が5になる組み合わせを書き出してみましょう。 (1, 4), (2, 3), (3, 2), (4, 1) の4通りです。
     </div>
     <div id="hint3" class="hint-content">
       確率は $\frac{4}{36}$ ですが、約分を忘れずに！
@@ -66,8 +70,8 @@
   </div>
 
   <div id="next-action" style="margin-top: 30px; text-align: right; display: none;">
-    <a href="prob_summary.html" class="page-card" style="display: inline-block; width: auto; background: #3498db; color: white; border: none;">
-      まとめへ ➔
+    <a href="prob_problem_6.html" class="page-card" style="display: inline-block; width: auto; background: #3498db; color: white; border: none;">
+      第6問へ進む ➔
     </a>
   </div>
 </section>

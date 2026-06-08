@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <title>演習4：玉の取り出し - 数学A 確率</title>
+  <title>演習6：トランプの確率(2) - 数学A 確率</title>
   <link rel="stylesheet" href="../style.css">
   <script>
     window.MathJax = {
@@ -19,16 +19,16 @@
 </head>
 <body>
 <header>
-  <h1>演習4：玉の取り出し</h1>
+  <h1>演習6：トランプの確率(2)</h1>
 </header>
 <nav>
-  <a href="prob_ex3_step1.html">例題</a>
+  <a href="prob_ex2_step1.html">例題</a>
   <a href="prob_problem_1.html">第1問</a>
   <a href="prob_problem_2.html">第2問</a>
   <a href="prob_problem_3.html">第3問</a>
-  <a href="prob_problem_4.html" style="background: #1abc9c;">第4問</a>
+  <a href="prob_problem_4.html">第4問</a>
   <a href="prob_problem_5.html">第5問</a>
-  <a href="prob_problem_6.html">第6問</a>
+  <a href="prob_problem_6.html" style="background: #1abc9c;">第6問</a>
   <a href="prob_problem_7.html">第7問</a>
   <a href="prob_summary.html">まとめ</a>
   <a href="../index.html">トップ</a>
@@ -37,7 +37,7 @@
 <section class="animate-fade">
   <div class="step-card">
     <h3>問題</h3>
-    <p>赤玉3個、白玉2個が入った袋から同時に2個の玉を取り出すとき、2個とも赤玉である確率は？</p>
+    <p>ジョーカーを除く52枚のトランプから1枚引くとき、それが絵札（J, Q, K）である確率は？</p>
     
     <div style="display: flex; align-items: center; justify-content: center; margin: 30px 0;">
       答え：
@@ -46,32 +46,32 @@
         <div class="fraction-line"></div>
         <input type="text" id="den-input" placeholder="分母">
       </div>
-      <button onclick="checkFractionAnswer(3, 10)" style="margin-left: 20px; padding: 10px 20px; cursor: pointer;">丸つけ</button>
+      <button onclick="checkFractionAnswer(3, 13)" style="margin-left: 20px; padding: 10px 20px; cursor: pointer;">丸つけ</button>
     </div>
     
     <div id="feedback" style="text-align: center; font-weight: bold; min-height: 2rem;"></div>
   </div>
 
-  <div class="hint-container">
-    <div class="hint-btn-group">
-      <button class="hint-btn" onclick="toggleHint('hint1')">💡 ヒント1</button>
-      <button class="hint-btn" onclick="toggleHint('hint2')">💡 ヒント2</button>
-      <button class="hint-btn" onclick="toggleHint('hint3')">💡 ヒント3</button>
-    </div>
-    <div id="hint1" class="hint-content">
-      全部で5個の玉から2個選ぶ組み合わせ（$_5C_2$）は何通りですか？
-    </div>
-    <div id="hint2" class="hint-content">
-      3個の赤玉から2個選ぶ組み合わせ（$_3C_2$）は何通りですか？
-    </div>
-    <div id="hint3" class="hint-content">
-      確率 = （赤玉2個の組み合わせ）÷（全体の組み合わせ）
-    </div>
+<div class="hint-container">
+  <div class="hint-btn-group">
+    <button class="hint-btn" onclick="toggleHint('hint1')">💡 ヒント1</button>
+    <button class="hint-btn" onclick="toggleHint('hint2')">💡 ヒント2</button>
+    <button class="hint-btn" onclick="toggleHint('hint3')">💡 ヒント3</button>
   </div>
+  <div id="hint1" class="hint-content">
+    トランプの全枚数は52枚です。
+  </div>
+  <div id="hint2" class="hint-content">
+    絵札（J, Q, K）は1つのマークにつき3枚あります。マークは4つ（スペード、ハート、ダイヤ、クラブ）あるので、全部で何枚でしょう？
+  </div>
+  <div id="hint3" class="hint-content">
+    絵札は全部で $3 \times 4 = 12$ 枚あります。確率は $\frac{12}{52}$ です。約分しましょう！
+  </div>
+</div>
 
   <div id="next-action" style="margin-top: 30px; text-align: right; display: none;">
-    <a href="prob_problem_5.html" class="page-card" style="display: inline-block; width: auto; background: #3498db; color: white; border: none;">
-      第5問へ進む ➔
+    <a href="prob_problem_7.html" class="page-card" style="display: inline-block; width: auto; background: #3498db; color: white; border: none;">
+      第7問へ進む ➔
     </a>
   </div>
 </section>

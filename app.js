@@ -27,6 +27,18 @@ function checkFractionAnswer(correctNum, correctDen) {
  */
 let currentHintStep = 0;
 
+function toggleHint(id) {
+    const hint = document.getElementById(id);
+    if (hint) {
+        if (hint.style.display === "block") {
+            hint.style.display = "none";
+        } else {
+            hint.style.display = "block";
+            hint.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+    }
+}
+
 function showNextHint() {
     currentHintStep++;
     const hint = document.getElementById(`hint${currentHintStep}`);
