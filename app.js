@@ -91,3 +91,27 @@ function drawBalls() {
         }
     }, 500);
 }
+
+// ヘッダーのプルダウンから選択されたページへ遷移する
+// ヘッダーのプルダウンから選択されたページへ遷移する
+function navigateTo(url) {
+    if (!url) return;
+    try {
+        localStorage.setItem('lastExample', url);
+    } catch (e) {
+        // ignore
+    }
+    window.location.href = url;
+}
+
+// ページ読み込み時に前回選択を復元する（自動遷移はしない）
+document.addEventListener('DOMContentLoaded', function() {
+    const sel = document.getElementById('examples-select');
+    if (!sel) return;
+    try {
+        const last = localStorage.getItem('lastExample');
+        if (last) sel.value = last;
+    } catch (e) {
+        // ignore
+    }
+});
