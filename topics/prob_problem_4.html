@@ -22,16 +22,33 @@
   <h1>演習4：玉の取り出し</h1>
 </header>
 <nav>
-  <a href="prob_ex3_step1.html">例題</a>
-  <a href="prob_problem_1.html">第1問</a>
-  <a href="prob_problem_2.html">第2問</a>
-  <a href="prob_problem_3.html">第3問</a>
-  <a href="prob_problem_4.html" style="background: #1abc9c;">第4問</a>
-  <a href="prob_problem_5.html">第5問</a>
-  <a href="prob_problem_6.html">第6問</a>
-  <a href="prob_problem_7.html">第7問</a>
-  <a href="prob_summary.html">まとめ</a>
-  <a href="../index.html">トップ</a>
+  <div class="nav-controls">
+    <div class="select-group">
+      <label for="examples-select">📘 例題</label>
+      <select id="examples-select" onchange="navigateTo(this.value)">
+        <option value="">例題を選択</option>
+        <option value="prob_ex1_step1.html">例題1：和が7の確率</option>
+        <option value="prob_ex2_step1.html">例題2：少なくとも1の確率</option>
+        <option value="prob_ex3_step1.html">例題3：玉の取り出し</option>
+      </select>
+    </div>
+    <div class="select-group">
+      <label for="problems-select">✏️ 演習</label>
+      <select id="problems-select" onchange="navigateTo(this.value)">
+        <option value="">演習を選択</option>
+        <option value="prob_problem_1.html">第1問：サイコロ</option>
+        <option value="prob_problem_2.html">第2問：トランプ</option>
+        <option value="prob_problem_3.html">第3問：硬貨</option>
+        <option value="prob_problem_4.html">第4問：玉の取り出し</option>
+        <option value="prob_problem_5.html">第5問：サイコロの和(2)</option>
+        <option value="prob_problem_6.html">第6問：トランプの絵札</option>
+        <option value="prob_problem_7.html">第7問：サイコロの和(3)</option>
+      </select>
+    </div>
+    <a href="../index.html" class="summary-btn" style="min-width: 80px; background: #95a5a6; margin-top: 28px;">
+      🏠 トップ
+    </a>
+  </div>
 </nav>
 
 <section class="animate-fade">
@@ -52,24 +69,29 @@
     <div id="feedback" style="text-align: center; font-weight: bold; min-height: 2rem;"></div>
   </div>
 
-  <div class="hint-container">
+  <div class="hint-box">
+  <button class="hint-tab" onclick="toggleHint('hint-choices')">💡 ヒントを表示する</button>
+  <div id="hint-choices" class="hint-content" style="background:none; border:none; padding:10px 0;">
     <div class="hint-btn-group">
-      <button class="hint-btn" onclick="toggleHint('hint1')">💡 ヒント1</button>
-      <button class="hint-btn" onclick="toggleHint('hint2')">💡 ヒント2</button>
-      <button class="hint-btn" onclick="toggleHint('hint3')">💡 ヒント3</button>
+      <button class="hint-btn" onclick="toggleHint('hint1')">ヒント1</button>
+      <button class="hint-btn" onclick="toggleHint('hint2')">ヒント2</button>
+      <button class="hint-btn" onclick="toggleHint('hint3')">ヒント3</button>
     </div>
+
     <div id="hint1" class="hint-content">
       全部で5個の玉から2個選ぶ組み合わせ（$_5C_2$）は何通りですか？
     </div>
+
     <div id="hint2" class="hint-content">
       3個の赤玉から2個選ぶ組み合わせ（$_3C_2$）は何通りですか？
     </div>
+
     <div id="hint3" class="hint-content">
       確率 = （赤玉2個の組み合わせ）÷（全体の組み合わせ）
     </div>
   </div>
-
-  <div id="next-action" style="margin-top: 30px; text-align: right; display: none;">
+</div>
+<div id="next-action" style="margin-top: 30px; text-align: right; display: none;">
     <a href="prob_problem_5.html" class="page-card" style="display: inline-block; width: auto; background: #3498db; color: white; border: none;">
       第5問へ進む ➔
     </a>

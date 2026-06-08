@@ -30,11 +30,12 @@ let currentHintStep = 0;
 function toggleHint(id) {
     const hint = document.getElementById(id);
     if (hint) {
-        if (hint.style.display === "block") {
-            hint.style.display = "none";
-        } else {
+        const currentDisplay = window.getComputedStyle(hint).display;
+        if (currentDisplay === "none") {
             hint.style.display = "block";
             hint.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        } else {
+            hint.style.display = "none";
         }
     }
 }

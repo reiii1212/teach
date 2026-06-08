@@ -11,11 +11,33 @@
   <h1>例題3：ステップ2（可視化）</h1>
 </header>
 <nav>
-  <a href="prob_ex1_step1.html">例題1</a>
-  <a href="prob_ex2_step1.html">例題2</a>
-  <a href="prob_ex3_step1.html" style="background: #1abc9c;">例題3</a>
-  <a href="prob_problem_1.html">演習</a>
-  <a href="../index.html">トップ</a>
+  <div class="nav-controls">
+    <div class="select-group">
+      <label for="examples-select">📘 例題</label>
+      <select id="examples-select" onchange="navigateTo(this.value)">
+        <option value="">例題を選択</option>
+        <option value="prob_ex1_step1.html">例題1：和が7の確率</option>
+        <option value="prob_ex2_step1.html">例題2：少なくとも1の確率</option>
+        <option value="prob_ex3_step1.html">例題3：玉の取り出し</option>
+      </select>
+    </div>
+    <div class="select-group">
+      <label for="problems-select">✏️ 演習</label>
+      <select id="problems-select" onchange="navigateTo(this.value)">
+        <option value="">演習を選択</option>
+        <option value="prob_problem_1.html">第1問：サイコロ</option>
+        <option value="prob_problem_2.html">第2問：トランプ</option>
+        <option value="prob_problem_3.html">第3問：硬貨</option>
+        <option value="prob_problem_4.html">第4問：玉の取り出し</option>
+        <option value="prob_problem_5.html">第5問：サイコロの和(2)</option>
+        <option value="prob_problem_6.html">第6問：トランプの絵札</option>
+        <option value="prob_problem_7.html">第7問：サイコロの和(3)</option>
+      </select>
+    </div>
+    <a href="../index.html" class="summary-btn" style="min-width: 80px; background: #95a5a6; margin-top: 28px;">
+      🏠 トップ
+    </a>
+  </div>
 </nav>
 
 
