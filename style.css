@@ -249,3 +249,188 @@ section {
   60% { transform: scale(1.08); }
   100% { transform: scale(1); }
 }
+/* ナビ全体 */
+.nav-controls {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  flex-wrap: wrap;
+  margin: 20px 0;
+}
+
+/* 各プルダウン */
+.select-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+/* ラベル */
+.select-group label {
+  font-weight: 600;
+  color: #2c3e50;
+  font-size: 0.95rem;
+}
+
+/* セレクトボックス */
+.select-group select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  min-width: 260px;
+  padding: 12px 45px 12px 15px;
+
+  font-size: 15px;
+  border: none;
+  border-radius: 14px;
+
+  background:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' fill='%23555'%3E%3Cpath d='M5 7l5 5 5-5'/%3E%3C/svg%3E")
+    no-repeat right 14px center,
+    white;
+
+  box-shadow:
+    0 4px 12px rgba(0,0,0,0.08);
+
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+/* ホバー */
+.select-group select:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 8px 20px rgba(0,0,0,0.12);
+}
+
+/* フォーカス */
+.select-group select:focus {
+  outline: none;
+  box-shadow:
+    0 0 0 3px rgba(203, 228, 245, 0.25),
+    0 8px 20px rgba(0,0,0,0.12);
+}
+
+/* 例題 */
+#examples-select {
+  border-left: 5px solid #3498db;
+}
+
+/* 演習 */
+#problems-select {
+  border-left: 5px solid #e67e22;
+}
+
+/* スマホ */
+@media (max-width: 768px) {
+  .nav-controls {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .select-group select {
+    width: 90vw;
+    max-width: 350px;
+  }
+}
+.select-group label {
+  display: inline-block;
+  width: fit-content;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-weight: 700;
+}
+
+label[for="examples-select"] {
+  background: #e3f2fd;
+  color: #1565c0;
+}
+
+label[for="problems-select"] {
+  background: #fff3e0;
+  color: #ef6c00;
+}
+.nav-controls {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.summary-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 150px;
+  height: 48px;
+
+  background: linear-gradient(135deg, #4facfe, #00c6ff);
+  color: white;
+  text-decoration: none;
+  font-weight: 700;
+  border-radius: 14px;
+
+  box-shadow: 0 4px 12px rgba(0,0,0,.15);
+  transition: all .2s ease;
+}
+
+.summary-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0,0,0,.2);
+}
+
+.select-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.summary-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 150px;
+  height: 48px;
+
+  background: linear-gradient(135deg, #4facfe, #00c6ff);
+  color: white;
+  text-decoration: none;
+  font-weight: 700;
+  border-radius: 14px;
+
+  margin-top: 28px; /* ← 下に移動 */
+
+  box-shadow: 0 4px 12px rgba(0,0,0,.15);
+  transition: all .2s ease;
+}
+.hint-box {
+  margin: 20px 0;
+}
+
+.hint-tab {
+  background: #f39c12;
+  color: white;
+  border: none;
+  border-radius: 10px 10px 0 0;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.hint-tab:hover {
+  background: #e67e22;
+}
+
+.hint-content {
+  display: none;
+  background: #fff8e6;
+  border: 2px solid #f39c12;
+  border-radius: 0 10px 10px 10px;
+  padding: 15px;
+  animation: fadeIn 0.3s ease;
+}

@@ -22,6 +22,33 @@ function checkFractionAnswer(correctNum, correctDen) {
     }
 }
 
+<div class="hint-container">
+
+    <button id="show-hint-btn"
+            class="hint-tab"
+            onclick="showNextHint()">
+        💡 ヒントを見る
+    </button>
+
+    <div id="hint1" class="hint-content">
+        サイコロの目は全部で何通りありますか？
+    </div>
+
+    <div id="hint2" class="hint-content">
+        「1」が出る場合は何通りありますか？
+    </div>
+
+    <div id="hint3" class="hint-content">
+        確率 =
+        （求める場合の数）÷（全体の場合の数）
+    </div>
+
+    <button class="hint-reset-btn"
+            onclick="resetHints()">
+        ↺ ヒントを閉じる
+    </button>
+
+</div>
 /**
  * 例題1：サイコロの和
  */
@@ -226,6 +253,8 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         }
     }
+
+    
 
     // 公開関数
     window.renderRelatedTabs = renderRelated;
