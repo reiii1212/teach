@@ -66,6 +66,19 @@ header {
   border: 0;
 }
 
+/* 類題タブ */
+.related-tabs { margin: 12px 0 18px; padding: 10px; border-radius: 8px; background: #f7fbfc; border: 1px solid #e6eef3; }
+.related-list { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; margin-bottom: 8px; }
+.related-item { display:flex; align-items:center; gap:8px; padding:6px 8px; background:#fff; border-radius:8px; border:1px solid #e0e8ec; }
+.related-link { color:#11698e; text-decoration:none; font-weight:600; }
+.difficulty-badge { background:#f1c40f; color:#2c3e50; padding:2px 6px; border-radius:6px; font-size:0.85rem; }
+.difficulty-select { padding:4px; border-radius:6px; border:1px solid #cbd6df; }
+.remove-related { background:transparent; border:0; color:#b03a2e; font-weight:700; cursor:pointer; }
+.add-related { display:flex; gap:8px; align-items:center; flex-wrap:wrap; }
+.add-related input { padding:6px; border-radius:6px; border:1px solid #cbd6df; }
+.add-related select { padding:6px; border-radius:6px; border:1px solid #cbd6df; }
+.add-related .btn-add { padding:6px 10px; border-radius:6px; border:1px solid #2c3e50; background:#2ecc71; color:white; cursor:pointer; }
+
 nav {
   display: flex;
   justify-content: center;

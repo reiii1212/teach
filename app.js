@@ -115,3 +115,118 @@ document.addEventListener('DOMContentLoaded', function() {
         // ignore
     }
 });
+
+// -----------------------------
+// 類題タブ機能
+// -----------------------------
+(function(){
+    function getRelatedKey(pageId){ return 'related:' + pageId; }
+
+    const DEFAULTS = {
+        'prob_ex1': [
+            {title: '例題1 ステップ2', url: 'prob_ex1_step2.html', difficulty: '初級'},
+            {title: '例題1 ステップ3', url: 'prob_ex1_step3.html', difficulty: '中級'}
+        ],
+        'prob_ex2': [
+            {title: '例題2 ステップ2', url: 'prob_ex2_step2.html', difficulty: '初級'},
+            {title: '例題2 ステップ3', url: 'prob_ex2_step3.html', difficulty: '中級'}
+        ],
+        'prob_ex3': [
+            {title: '例題3 ステップ2', url: 'prob_ex3_step2.html', difficulty: '初級'},
+            {title: '例題3 ステップ3', url: 'prob_ex3_step3.html', difficulty: '中級'}
+        ]
+    };
+
+    function loadRelated(pageId){
+        try{
+            const raw = localStorage.getItem(getRelatedKey(pageId));
+            if(raw) return JSON.parse(raw);
+        }catch(e){}
+        return DEFAULTS[pageId] ? JSON.parse(JSON.stringify(DEFAULTS[pageId])) : [];
+    }
+
+    function saveRelated(pageId, arr){
+        try{ localStorage.setItem(getRelatedKey(pageId), JSON.stringify(arr)); }catch(e){}
+    }
+
+    function renderRelated(pageId, containerId){
+        const container = document.getElementById(containerId);
+        if(!container) return;
+        const list = loadRelated(pageId);
+        const html = [];
+        html.push('<div class="related-tabs">');
+        html.push('<div class="related-list" role="tablist">');
+        list.forEach((it, idx)=>{
+            html.push(`
+                <div class="related-item" data-idx="${idx}">
+                    <a href="${it.url}" class="related-link">${it.title}</a>
+                    <span class="difficulty-badge">${it.difficulty}</span>
+                    <select class="difficulty-select" data-idx="${idx}" aria-label="難易度変更">
+                        <option value="初級" ${it.difficulty==='初級'?'selected':''}>初級</option>
+                        <option value="中級" ${it.difficulty==='中級'?'selected':''}>中級</option>
+                        <option value="上級" ${it.difficulty==='上級'?'selected':''}>上級</option>
+                    </select>
+                    <button class="remove-related" data-idx="${idx}" title="削除">✖</button>
+                </div>
+            `);
+        });
+        html.push('</div>');
+
+        // 追加フォーム
+        html.push(`
+            <form class="add-related" onsubmit="return false;">
+                <input type="text" name="title" placeholder="類題タイトル" required />
+                <input type="text" name="url" placeholder="URL（同ディレクトリ内）" required />
+                <select name="difficulty">
+                    <option value="初級">初級</option>
+                    <option value="中級">中級</option>
+                    <option value="上級">上級</option>
+                </select>
+                <button type="button" class="btn-add">追加</button>
+            </form>
+        `);
+
+        html.push('</div>');
+        container.innerHTML = html.join('\n');
+
+        // イベント接続
+        container.querySelectorAll('.difficulty-select').forEach(sel=>{
+            sel.addEventListener('change', function(e){
+                const idx = Number(this.dataset.idx);
+                const arr = loadRelated(pageId);
+                arr[idx].difficulty = this.value;
+                saveRelated(pageId, arr);
+                renderRelated(pageId, containerId);
+            });
+        });
+
+        container.querySelectorAll('.remove-related').forEach(btn=>{
+            btn.addEventListener('click', function(){
+                const idx = Number(this.dataset.idx);
+                const arr = loadRelated(pageId);
+                arr.splice(idx,1);
+                saveRelated(pageId, arr);
+                renderRelated(pageId, containerId);
+            });
+        });
+
+        const addBtn = container.querySelector('.btn-add');
+        if(addBtn){
+            addBtn.addEventListener('click', function(){
+                const form = this.closest('form');
+                const title = form.title.value.trim();
+                const url = form.url.value.trim();
+                const difficulty = form.difficulty.value;
+                if(!title||!url) return;
+                const arr = loadRelated(pageId);
+                arr.push({title, url, difficulty});
+                saveRelated(pageId, arr);
+                form.reset();
+                renderRelated(pageId, containerId);
+            });
+        }
+    }
+
+    // 公開関数
+    window.renderRelatedTabs = renderRelated;
+})();
