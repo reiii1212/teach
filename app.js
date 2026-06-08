@@ -22,33 +22,29 @@ function checkFractionAnswer(correctNum, correctDen) {
     }
 }
 
-<div class="hint-container">
+/**
+ * ヒント表示ロジック
+ */
+let currentHintStep = 0;
 
-    <button id="show-hint-btn"
-            class="hint-tab"
-            onclick="showNextHint()">
-        💡 ヒントを見る
-    </button>
+function showNextHint() {
+    currentHintStep++;
+    const hint = document.getElementById(`hint${currentHintStep}`);
+    if (hint) {
+        hint.style.display = "block";
+        // スムーズにスクロール
+        hint.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    } else {
+        alert("これ以上のヒントはありません。");
+    }
+}
 
-    <div id="hint1" class="hint-content">
-        サイコロの目は全部で何通りありますか？
-    </div>
+function resetHints() {
+    currentHintStep = 0;
+    const hints = document.querySelectorAll('.hint-content');
+    hints.forEach(h => h.style.display = "none");
+}
 
-    <div id="hint2" class="hint-content">
-        「1」が出る場合は何通りありますか？
-    </div>
-
-    <div id="hint3" class="hint-content">
-        確率 =
-        （求める場合の数）÷（全体の場合の数）
-    </div>
-
-    <button class="hint-reset-btn"
-            onclick="resetHints()">
-        ↺ ヒントを閉じる
-    </button>
-
-</div>
 /**
  * 例題1：サイコロの和
  */
